@@ -1,0 +1,215 @@
+.holiday-form {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 1.75rem 2rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  font-family: system-ui, sans-serif;
+}
+
+.holiday-topbar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: end;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.holiday-topbar-left {
+  display: flex;
+  align-items: end;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.holiday-title {
+  color: #dc2626;
+  font-size: 1.4rem;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.holiday-topbar .field {
+  display: flex;
+  flex-direction: column;
+}
+
+.holiday-topbar .field label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 0.25rem;
+}
+
+.holiday-topbar .field input,
+.holiday-topbar .field select {
+  padding: 0.4rem 0.5rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  min-width: 110px;
+}
+
+.regen-btn {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  height: fit-content;
+}
+
+.holiday-stats {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  justify-content: flex-end;
+}
+
+.holiday-stats div {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.holiday-stats strong {
+  display: block;
+  font-size: 1.1rem;
+  color: #0f172a;
+}
+
+.holiday-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.holiday-table th {
+  text-align: left;
+  font-size: 0.75rem;
+  color: #64748b;
+  padding: 0.5rem;
+  border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  background: #fff;
+}
+
+.holiday-table td {
+  padding: 0.4rem 0.5rem;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.85rem;
+}
+
+.holiday-row {
+  background: #fef2f2;
+}
+
+.holiday-table select,
+.holiday-table input {
+  padding: 0.35rem 0.5rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  width: 100%;
+}
+
+.table-scroll {
+  max-height: 65vh;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+/* grid on the left, counts + rules on the right */
+.holiday-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .holiday-body { grid-template-columns: 1fr; }
+}
+
+.holiday-filter-row th {
+  top: 0;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  font-weight: 500;
+}
+
+.holiday-table thead tr:nth-child(2) th {
+  top: 38px; /* second sticky header row sits under the filter row */
+}
+
+.holiday-table select:disabled,
+.holiday-table input:disabled {
+  background: transparent;
+  border-color: transparent;
+  color: #0f172a;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* holiday kinds get their own tint; weekly stays the classic red */
+.holiday-row-festival { background: #fff7ed; }
+.holiday-row-govt, .holiday-row-general { background: #eff6ff; }
+.holiday-row-shutdown { background: #f1f5f9; }
+.holiday-row-compensatory, .holiday-row-special { background: #f5f3ff; }
+
+.holiday-readonly {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  border-radius: 8px;
+  padding: 0.6rem 0.9rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+}
+
+.holiday-side {
+  position: sticky;
+  top: 0;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 1rem;
+  background: #f8fafc;
+  font-size: 0.85rem;
+}
+
+.holiday-side h3 {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #64748b;
+}
+
+.holiday-counts {
+  list-style: none;
+  margin: 0 0 1.25rem;
+  padding: 0;
+}
+
+.holiday-counts li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3rem 0;
+  border-bottom: 1px dashed #e2e8f0;
+}
+
+.holiday-counts li.is-holiday b { color: #b91c1c; }
+.holiday-counts li.is-working b { color: #15803d; }
+
+.holiday-rules {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: #334155;
+  line-height: 1.5;
+}

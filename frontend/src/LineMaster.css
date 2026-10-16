@@ -1,0 +1,242 @@
+.line-master-top-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* side by side only when both panels fit (the No Of Lines table needs ~700px) */
+@media (max-width: 1600px) {
+  .line-master-top-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mw-toolbar {
+  display: flex;
+  align-items: end;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.mw-toolbar .field {
+  display: flex;
+  flex-direction: column;
+}
+
+.mw-toolbar .field label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 0.25rem;
+}
+
+.mw-toolbar .field input,
+.mw-toolbar .field select {
+  padding: 0.4rem 0.5rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.mw-tabs {
+  display: flex;
+  gap: 0.25rem;
+  border-bottom: 2px solid var(--border);
+  margin-bottom: 0.75rem;
+}
+
+.mw-tab {
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #64748b;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+}
+
+.mw-tab.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+.mw-table {
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.mw-table th,
+.mw-table td {
+  border: 1px solid #e2e8f0;
+  padding: 0.15rem;
+  text-align: center;
+}
+
+.mw-table th {
+  background: #f8fafc;
+  font-size: 0.7rem;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+.mw-sticky-col {
+  position: sticky;
+  left: 0;
+  background: #f8fafc;
+  font-weight: 600;
+  z-index: 1;
+}
+
+.mw-table input {
+  width: 42px;
+  border: none;
+  text-align: center;
+  padding: 0.3rem 0.1rem;
+  font-size: 0.8rem;
+  background: transparent;
+}
+
+.mw-table input:focus {
+  outline: 2px solid var(--primary);
+  background: #fff;
+}
+
+.mw-override input {
+  background: #fef3c7;
+}
+
+.remove-btn-text {
+  background: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.line-capacity-layout {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.line-capacity-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: end;
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+.line-capacity-form .field {
+  display: flex;
+  flex-direction: column;
+  min-width: 130px;
+}
+
+.line-capacity-form .field label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 0.3rem;
+}
+
+.line-capacity-form .field input {
+  padding: 0.5rem 0.6rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+}
+
+.all-lines-check {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #334155;
+  padding-bottom: 0.5rem;
+}
+
+.line-select-box {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  height: fit-content;
+}
+
+.line-select-header {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  background: #f1f5f9;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+  border-bottom: 1px solid var(--border);
+}
+
+.line-select-list {
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.line-select-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.85rem;
+  border-bottom: 1px solid #f1f5f9;
+  cursor: pointer;
+}
+
+.line-select-row:hover {
+  background: #f8fafc;
+}
+
+/* holidays from the unit's Holiday Plan (no production on these days) */
+.mw-table th.mw-holiday {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.mw-table td.mw-holiday {
+  background: repeating-linear-gradient(45deg, #fef2f2, #fef2f2 6px, #fee2e2 6px, #fee2e2 12px);
+}
+
+/* days using the unit's Default Working Hour (no range / day value) */
+.mw-table td.mw-default input {
+  color: #94a3b8;
+  font-style: italic;
+}
+
+.lm-hint {
+  margin: 0 0 0.75rem;
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+/* keep both top panels inside the page: grid items may shrink, panel headers wrap */
+.line-master-top-grid > * {
+  min-width: 0;
+}
+
+.line-master-top-grid .poc-search-header {
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+@media (max-width: 1400px) {
+  .line-capacity-layout {
+    grid-template-columns: 1fr 160px;
+  }
+}
